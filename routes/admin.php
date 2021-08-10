@@ -15,8 +15,6 @@ use Illuminate\Support\Facades\Auth;
 */
 
 
-Route::get('/', function () {
-    return 'hello';
-})->name('dashboard');
+Route::get('/','HomeController@index')->name('dashboard');
 
 
