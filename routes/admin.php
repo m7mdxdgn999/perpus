@@ -14,11 +14,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+
 Route::get('/', function () {
-    return view('welcome');
-});
+    return 'hello';
+})->name('dashboard');
 
 
-Auth::routes(['verify'=>true]);
-
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
