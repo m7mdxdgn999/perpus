@@ -14,6 +14,6 @@ use Yajra\Datatables\Datatables;
 class DataController extends Controller
 {
     public function authors(){
-        return datatables()->of(DB::table('authors'))->toJson();
+        return datatables()->of(Author::orderBy('kode_author','ASC'))->toJson();
     }
 }

@@ -138,6 +138,12 @@
 <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+{{-- boostrapotify --}}
+<script src="{{ asset('assets\plugins\bs-notify.min.js') }}"></script>
+@include('layouts.admin.alerts')
+
+{{-- sweet alert --}}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @stack('scripts')
 </body>
 </html>
