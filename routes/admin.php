@@ -16,5 +16,6 @@ use Illuminate\Support\Facades\Auth;
 
 
 Route::get('/','HomeController@index')->name('dashboard');
+Route::get('/author','AuthorController@index')->name('author.index');
 
 
