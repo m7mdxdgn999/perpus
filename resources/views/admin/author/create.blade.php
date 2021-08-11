@@ -1,4 +1,5 @@
 @extends('layouts.admin.master')
+@section('title', 'Tambah Penulis')
 
 @section('content')
     <div class="container-fluid">
@@ -13,9 +14,12 @@
                     <form action="{{ route('admin.author.store') }}" method="POST">
                         @csrf
                       <div class="card-body">
-                        <div class="form-group">
+                        <div class="form-group ">
                           <label for="">Nama</label>
-                          <input type="text" class="form-control"  name="name">
+                          <input type="text" class="form-control @error('name') is-invalid @enderror "  name="name" value="{{ old('name')}} ">
+                          @error('name')
+                          <span  class="error invalid-feedback">{{ $message }}</span>
+                          @enderror
                         </div>
                       </div>
                       <!-- /.card-body -->

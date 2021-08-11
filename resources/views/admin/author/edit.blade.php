@@ -1,4 +1,5 @@
 @extends('layouts.admin.master')
+@section('title', 'Edit Penulis')
 
 @section('content')
     <div class="container-fluid">
@@ -16,7 +17,10 @@
                       <div class="card-body">
                         <div class="form-group">
                           <label for="">Nama</label>
-                          <input type="text" class="form-control"  name="name" value="{{ $author->name }}">
+                          <input type="text" class="form-control @error('name') is-invalid @enderror "  name="name" value="{{ old('name') ?? $author->name }}">
+                          @error('name')
+                          <span  class="error invalid-feedback">{{ $message }}</span>
+                          @enderror
                         </div>
                       </div>
                       <!-- /.card-body -->

@@ -14,11 +14,15 @@ class AuthorController extends Controller
     }
 
     public function create(){
-
-        return view('admin.author.create');
+        
+        return view('admin.author.create',compact('author'));
     }
 
     public function store(Request $request){
+
+        $this->validate($request,[
+            'name'=>'required|min:3'
+        ]);
 
         Author::create($request->only('name'));
         return redirect()->route('admin.author.index')->with('success','data berhasil ditambah!');
@@ -30,6 +34,10 @@ class AuthorController extends Controller
     }
 
     public function update(Request $request, $kode_author){
+        $this->validate($request,[
+            'name'=>'required|min:3'
+        ]);
+        
         Author::where('kode_author', $kode_author)->update([
             'name' => $request->name            
         ]);
