@@ -15,7 +15,7 @@ class AuthorController extends Controller
 
     public function create(){
         
-        return view('admin.author.create',compact('author'));
+        return view('admin.author.create');
     }
 
     public function store(Request $request){

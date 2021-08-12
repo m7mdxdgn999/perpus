@@ -21,9 +21,9 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Author</h3>                        
+                        <h3 class="card-title">Penulis</h3>                        
                     </div>
-                    <a href="{{ route('admin.author.create') }}" class="btn btn-primary">Tambah Penulis</a>
+                    <a href="{{ route('admin.book.create') }}" class="btn btn-primary">Tambah Buku</a>
                     <div class="card-body">
 
                         <table id="datatable" class="table table-bordered table-hover">

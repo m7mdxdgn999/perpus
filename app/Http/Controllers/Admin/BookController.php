@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Author;
 use App\Book;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -14,5 +15,11 @@ class BookController extends Controller
                     ->join('authors','books.kode_author','=','authors.kode_author')
                     ->get();
         return view('admin.book.index',$data);
+    }
+
+    public function create(){
+        
+        $authors=Author::all();
+        return view('admin.book.create',compact('authors'));
     }
 }

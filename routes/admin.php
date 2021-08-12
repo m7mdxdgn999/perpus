@@ -26,5 +26,7 @@ Route::put('/author/update/{kode_author}','AuthorController@update')->name('auth
 Route::delete('/author/destroy/{kode_author}','AuthorController@destroy')->name('author.destroy');
 
 Route::get('/book','BookController@index')->name('book.index');
+Route::get('/book/create','BookController@create')->name('book.create');
+Route::post('/book/store','BookController@store')->name('book.store');
 
 
