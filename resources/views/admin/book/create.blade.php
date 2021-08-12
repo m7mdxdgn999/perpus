@@ -25,7 +25,7 @@
                       <div class="card-body">
                         <div class="form-group ">
                           <label for="">Deskripsi</label>
-                          <textarea type="text" class="form-control @error('description') is-invalid @enderror "  name="description" value="{{ old('description')}} "> </textarea>
+                          <textarea type="text" class="form-control @error('description') is-invalid @enderror "  name="description" value="{{ old('description')}}"></textarea>
                           @error('description')
                           <span  class="error invalid-feedback">{{ $message }}</span>
                           @enderror
@@ -53,15 +53,12 @@
                         <div class="form-group">
                             <label for="">Sampul</label>
                             <div class="input-group">
-                              <div class="custom-file">
-                                <input type="file" class="custom-file-input  @error('kode_author') is-invalid @enderror" name="cover">
-                                <label class="custom-file-label " >Choose file</label>
+                              <div class="form-group">
+                                <input type="file" class="form-control  @error('cover') is-invalid @enderror" name="cover">
                                 @error('cover')
                                 <span  class="error invalid-feedback">{{ $message }}</span>
                                 @enderror
-                              </div>
-                              <div class="input-group-append">
-                                <span class="input-group-text">Upload</span>
+                                                               
                               </div>
                             </div>
                           </div>

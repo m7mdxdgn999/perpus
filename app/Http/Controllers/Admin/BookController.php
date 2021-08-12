@@ -22,4 +22,33 @@ class BookController extends Controller
         $authors=Author::all();
         return view('admin.book.create',compact('authors'));
     }
+
+    public function store(Request $request){
+
+        $this->validate($request,[
+
+            'title'=>'required',
+            ''=>'required',
+            'cover'=>'file|image',
+            'kode_author'=>'required',
+            'qty'=>'required|numeric',
+
+        ]);
+
+        if ($request->hasFile('cover')){
+            $cover=$request->file('cover')->store('assets/covers');
+        }
+
+        Book::create([
+
+            'title'=>$request->title,
+            'description'=>$request->description,
+            'kode_author'=>$request->kode_author,
+            'cover'=>$cover,
+            'qty'=>$request->qty,          
+
+        ]);
+
+        return redirect()->route('admin.book.index')->with('success','data berhasil ditambah!');
+    }
 }
