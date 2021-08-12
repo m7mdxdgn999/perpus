@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::get('/', 'Frontend\BookController@index');
 
 
 Auth::routes(['verify'=>true]);

@@ -21,11 +21,7 @@
     </div>
 
 
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="">Login</a></li>
-        <li><a href="">Register</a></li>
 
-    </ul>
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
