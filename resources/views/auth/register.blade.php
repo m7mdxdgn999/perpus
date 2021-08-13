@@ -1,9 +1,9 @@
-@extends('layouts.homepage..master')
+@extends('layouts.homepage.master')
 
 @section('content')
     <div class="continer">
         <h3>Register</h3>
-        <form action="" class="col s12" method="post">
+        <form action="{{ route('register') }}" class="col s12" method="post">
             @csrf
             <div class="row">
                 <div class="input-field col s12">
@@ -42,7 +42,7 @@
                 </div>
                 <div class="input-field right">
 
-                    <input type="submit" class="vawas-effect waves-light btn red accent-1" value="Register">
+                    <input type="submit" class="vawas-effect waves-light btn red accent-1" value="Login">
 
                 </div>
             </div>

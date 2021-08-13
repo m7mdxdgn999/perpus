@@ -1,6 +1,39 @@
-@extends('layouts.app')
-
+@extends('layouts.homepage.master')
 @section('content')
+<div class="continer">
+    <h3>Login</h3>
+    <form action="{{ route('login') }}" class="col s12" method="post">
+        @csrf
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">email</i>
+                <input type="email" class="validate @error('email') invalid @enderror" name="email"
+                    value="{{ old('email') }}">
+                <label for="">Email</label>
+                @error('email')
+                <span class="helper-text" data-error="{{ $message }}"></span>
+            @enderror
+            </div>
+            <div class="input-field col s12">
+                <i class="material-icons prefix">lock</i>
+                <input type="password" class="@error('password') invalid @enderror" name="password" value="">
+                <label for="">Password</label>
+                @error('password')
+                <span class="helper-text" data-error="{{ $message }}"></span>
+            @enderror
+            </div>
+
+            <div class="input-field right">
+
+                <input type="submit" class="vawas-effect waves-light btn red accent-1" value="Register">
+
+            </div>
+        </div>
+
+    </form>
+</div>
+@endsection
+{{-- 
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -69,5 +102,4 @@
             </div>
         </div>
     </div>
-</div>
-@endsection
+</div> --}}
