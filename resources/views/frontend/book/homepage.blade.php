@@ -27,6 +27,8 @@
 
 </div>
 
+{{-- pagination --}}
+{{ $books->links('vendor.pagination.materialliz') }}
 <ul class="pagination center">
     <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
     <li class="active"><a href="#!">1</a></li>
@@ -36,4 +38,7 @@
     <li class="waves-effect"><a href="#!">5</a></li>
     <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
   </ul>
+            
+
+
 @endsection
