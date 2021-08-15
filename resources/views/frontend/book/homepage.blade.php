@@ -16,7 +16,11 @@
                     <p>{{ Str::limit($book->description, 100)  }}</p>
                 </div>
                 <div class="card-action">
-                    <a href="#">This is a link</a>
+                    <form action="{{ route('book.borrow') }}" method="post">
+                        <input type="hidden" name="kode_buku" value="{{  $book->kode_buku }}">
+                        @csrf
+                        <input type="submit" value="pinjam buku" class="btn red accen-1 right waves-effect waves-light">
+                    </form>
                 </div>
             </div>
         </div>

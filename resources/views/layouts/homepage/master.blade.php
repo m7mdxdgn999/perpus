@@ -29,6 +29,7 @@
         M.AutoInit();
 
     </script>
+    @include('layouts.homepage.toast')
 </body>
 
 </html>
